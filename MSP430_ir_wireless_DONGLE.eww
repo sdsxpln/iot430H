@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\MSP430_DONGLE.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\MSP430_NODE.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>
+
+

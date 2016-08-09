@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1861</ColumnWidth1></Debug-Log>
+      <Build>
+        <ColumnWidth0>20</ColumnWidth0>
+        <ColumnWidth1>1395</ColumnWidth1>
+        <ColumnWidth2>372</ColumnWidth2>
+        <ColumnWidth3>93</ColumnWidth3>
+      </Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>124</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        <col-names>
+          
+          
+        <item>Disassembly</item><item>_I0</item></col-names>
+        <col-widths>
+          
+          
+        <item>500</item><item>20</item></col-widths>
+        <DisasmHistory/>
+        
+        
+      <ShowCodeCoverage>0</ShowCodeCoverage><ShowInstrProfiling>0</ShowInstrProfiling></Disassembly>
+    <CycleCounter5xx><StartCounter>2</StartCounter><StopCounter>2</StopCounter><ClearCounter>2</ClearCounter><CounterMode>0</CounterMode><SaveTrigger1>4294967295</SaveTrigger1><SaveTrigger2>4294967295</SaveTrigger2></CycleCounter5xx></Static>
+    <Windows>
+      
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-3199-1141</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-13425-1154</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-15119-1941</Identity>
+            <TabName>Breakpoints</TabName>
+            <Factory>Breakpoints</Factory>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-13947-1144</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>MSP430_DONGLE</ExpandedNode><ExpandedNode>MSP430_DONGLE/src</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1><Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-24696-1147</Identity>
+            <TabName>Disassembly</TabName>
+            <Factory>Disassembly</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-5094-19491</Identity><TabName>Cycle Counter 5xx Control</TabName><Factory>CycleCounter5xx</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\ir_lora.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\protocol.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>482</SelStart><SelEnd>482</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\i2c.c</Filename><XPos>0</XPos><YPos>338</YPos><SelStart>6792</SelStart><SelEnd>6792</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\msp430x54xA_uart_0.c</Filename><XPos>0</XPos><YPos>54</YPos><SelStart>3830</SelStart><SelEnd>3837</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\msp430x54xA_uart_2.c</Filename><XPos>0</XPos><YPos>132</YPos><SelStart>5360</SelStart><SelEnd>5360</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\msp430x54xA_uart_3.c</Filename><XPos>0</XPos><YPos>66</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\msp430x54xA_uart_1.c</Filename><XPos>0</XPos><YPos>63</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\msp430x54xA_uart_0.c</Filename><XPos>0</XPos><YPos>64</YPos><SelStart>3624</SelStart><SelEnd>3624</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\protocol.c</Filename><XPos>0</XPos><YPos>101</YPos><SelStart>3435</SelStart><SelEnd>3435</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\ir_lora.c</Filename><XPos>0</XPos><YPos>269</YPos><SelStart>6842</SelStart><SelEnd>6842</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\key.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>120</SelStart><SelEnd>120</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\ir_lora.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>738</SelStart><SelEnd>738</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\msp430x54xA_uart_1.c</Filename><XPos>0</XPos><YPos>67</YPos><SelStart>4896</SelStart><SelEnd>4896</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\msp430x54xA_uart_3.c</Filename><XPos>0</XPos><YPos>57</YPos><SelStart>3688</SelStart><SelEnd>3696</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\main.c</Filename><XPos>0</XPos><YPos>18</YPos><SelStart>1149</SelStart><SelEnd>1207</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\msp430x54xA_adc12_02.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\msp430x54xA_uart_2.c</Filename><XPos>0</XPos><YPos>64</YPos><SelStart>5285</SelStart><SelEnd>5800</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\protocol.c</Filename><XPos>0</XPos><YPos>89</YPos><SelStart>2097</SelStart><SelEnd>2097</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\key.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>118</SelStart><SelEnd>118</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\timer.c</Filename><XPos>0</XPos><YPos>57</YPos><SelStart>1240</SelStart><SelEnd>1240</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\utils.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>147</SelStart><SelEnd>147</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\led.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\main.c</Filename><XPos>0</XPos><YPos>51</YPos><SelStart>1734</SelStart><SelEnd>1745</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\utils.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>624</SelStart><SelEnd>727</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MSP430F5438A_IR_WIRELESS\src\timer.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>335</SelStart><SelEnd>335</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0 Evaluation\430\inc\msp430x54x.h</Filename><XPos>0</XPos><YPos>1344</YPos><SelStart>82544</SelStart><SelEnd>82544</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\i2c.c</Filename><XPos>0</XPos><YPos>352</YPos><SelStart>9477</SelStart><SelEnd>9477</SelEnd></Tab><ActiveTab>26</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0 Evaluation\430\inc\msp430f5438a.h</Filename><XPos>0</XPos><YPos>3363</YPos><SelStart>202256</SelStart><SelEnd>202264</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\ucs_i2c.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-049d0970><key>iaridepm.enu1</key></Toolbar-049d0970></Sizes></Row0><Row1><Sizes><Toolbar-053e7aa0><key>debuggergui.enu1</key></Toolbar-053e7aa0></Sizes></Row1><Row2><Sizes><Toolbar-053e8018><key>430fet1</key></Toolbar-053e8018></Sizes></Row2></Top><Left><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>508</Bottom><Right>198</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>104167</sizeHorzCX><sizeHorzCY>200602</sizeHorzCY><sizeVertCX>104167</sizeVertCX><sizeVertCY>511535</sizeVertCY></Rect></Wnd1></Sizes></Row0></Left><Right><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>508</Bottom><Right>718</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>104167</sizeHorzCX><sizeHorzCY>200602</sizeHorzCY><sizeVertCX>375000</sizeVertCX><sizeVertCY>511535</sizeVertCY></Rect></Wnd2></Sizes></Row0></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>198</Bottom><Right>1922</Right><x>-2</x><y>-2</y><xscreen>1924</xscreen><yscreen>200</yscreen><sizeHorzCX>1002083</sizeHorzCX><sizeHorzCY>200602</sizeHorzCY><sizeVertCX>104167</sizeVertCX><sizeVertCY>200602</sizeVertCY></Rect></Wnd0></Sizes></Row0><Row1><Sizes><Wnd3><Rect><Top>196</Top><Left>-2</Left><Bottom>396</Bottom><Right>1922</Right><x>-2</x><y>196</y><xscreen>1924</xscreen><yscreen>200</yscreen><sizeHorzCX>1002083</sizeHorzCX><sizeHorzCY>200602</sizeHorzCY><sizeVertCX>104167</sizeVertCX><sizeVertCY>200602</sizeVertCY></Rect></Wnd3></Sizes></Row1></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+
