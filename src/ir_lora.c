@@ -33,10 +33,10 @@ void lora_read(unsigned char *buf,int len,int * read)
 //
 #define LORA_MODE_SLEEP 3
 
-#define  M0_PIN_low   (P6OUT &= ~(BIT7))
-#define  M0_PIN_high  (P6OUT |= (BIT7))
-#define  M1_PIN_low  (P6OUT &= ~(BIT6))
-#define  M1_PIN_high (P6OUT |= (BIT6))
+#define  M0_PIN_low   (P9OUT &= ~(BIT3))
+#define  M0_PIN_high  (P9OUT |= (BIT3))
+#define  M1_PIN_low  (P9OUT &= ~(BIT2))
+#define  M1_PIN_high (P9OUT |= (BIT2))
 
 #define LORA_CHANNEL 0x17
 static unsigned char lora_config[6]={0xfe};
@@ -73,10 +73,10 @@ void init_lora_device(void)
 
 void lora_gpio_init(void)
 {
-  P6DIR |= BIT6;  //P6.6设置为输出 M1
-  P6DIR |= BIT7;  //P6.7设置为输出 M0
-  P6DIR&=~BIT5;//p6.5设置为输入 AUX
-  P6REN&=~BIT5;//no pull
+  P9DIR |= BIT2;  //P6.6设置为输出 M1
+  P9DIR |= BIT3;  //P6.7设置为输出 M0
+  P8DIR&=~BIT0;//p6.5设置为输入 AUX
+  P8REN&=~BIT0;//no pull
   delay(1000);
 }
 
@@ -105,7 +105,7 @@ void lora_mode_config(char mode)
 //ok
 int lora_is_ready(void)
 {
-    return (P6IN&BIT5)>>5;
+    return (P8IN&BIT0);
 }
 
 void lora_reset(void)
@@ -188,6 +188,7 @@ int write_sn(char * buf)
     g_dongle_addr=get_addr_from_sn(g_sn,SN_LEN);
     printf("node_addr=%d 0x%02x\r\n",(unsigned short)g_dongle_addr,(unsigned short)g_dongle_addr); 
     set_lora_addr(g_dongle_addr);
+    flash_led0_fast(20);
 }
 //ok
 int read_sn(unsigned char * buf)
@@ -257,12 +258,12 @@ void ir_power_off(void)
 //P5.5
 void lora_power_on(void)
 {
-   P9DIR |= BIT7;  
-   P9OUT |= (BIT7);
+   P5DIR |= BIT4;  
+   P5OUT |= (BIT4);
 }
 
 void lora_power_off(void)
 {
-   P9DIR |= BIT7; 
-   P9OUT &= ~(BIT7);
+   P5DIR |= BIT4; 
+   P5OUT &= ~(BIT4);
 }

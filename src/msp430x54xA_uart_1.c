@@ -147,40 +147,38 @@ __interrupt void USCI_A1_ISR(void)
   }
 }
 static unsigned char buf[256]={0};
-
-void process_pc_uart1(void)
+void process_config_uart1(void)
 {
     int len=0,total_len=0,tmp_len=0;
-     if(recv_buf_len1>0)
-     {
-        while(len<4)
+    if(recv_buf_len1>0)
+    {
+      while(len<4)
+      {
+        uart1_read(buf,256,&len);
+        delay(400);
+      }
+      //printf("len=%d,buf[0]=%c\r\n",len,buf[0]);
+      if(len)
+      {  
+        tmp_len=len;
+        if((buf[0]=='#')&&(buf[1]=='$'))
         {
-           printf("+");
-          uart1_read(buf,256,&len);
-          delay(400);
+        //check len
+          total_len=buf[2]+(buf[3]<<8);
+          if(total_len>len)
+          {
+            delay(500);
+            len=0;
+            while(recv_buf_len1<(total_len-tmp_len))
+            {     
+              ;
+            } 
+            uart1_read(buf+tmp_len,256-tmp_len,&len);
+            tmp_len=tmp_len+len;
+          } 
+          led0_flash_data();
+          parse_data_config(buf,total_len);
         }
-        if(len)
-        {  
-         tmp_len=len;
-         if((buf[0]=='#')&&(buf[1]=='$'))
-         {
-          //check len
-           total_len=buf[2]+(buf[3]<<8);
-           printf("total %d,len %d\r\n",total_len,len);
-           if(total_len>len)
-           {
-              delay(500);
-              len=0;
-              while(recv_buf_len1<(total_len-tmp_len))
-              {     
-                printf("*");
-              } 
-              uart1_read(buf+tmp_len,256-tmp_len,&len);
-              tmp_len=tmp_len+len;
-           }  
-           led0_flash_data();
-           parse_data_pc(buf,total_len);
-         }       
-      } 
-     }
+      }
+    }
 }

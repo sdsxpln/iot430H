@@ -15,10 +15,10 @@ Control Register=0
 NextState0=0
 NextState1=0
 [Action Register]
-Break=0
+Break=1
 State Storage=0
 [DebugChecksum]
-Checksum=-180899609
+Checksum=2033340690
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -41,7 +41,11 @@ LogFile=_ ""
 Bp0=_ "STD_CODE" "{$PROJ_DIR$\src\i2c.c}.235.1" 0 0 0 0 "" 0 ""
 Bp1=_ "STD_CODE" "{$PROJ_DIR$\src\i2c.c}.235.1" 0 0 0 0 "" 0 ""
 Bp2=_ "STD_CODE" "{$PROJ_DIR$\src\i2c.c}.235.1" 0 0 0 0 "" 0 ""
-Count=3
+Bp3=_ "STD_CODE" "{$PROJ_DIR$\src\main.c}.73.3" 1 0 0 0 "" 0 ""
+Bp4=_ "STD_CODE" "{$PROJ_DIR$\src\ir_lora.c}.52.3" 1 0 0 0 "" 0 ""
+Bp5=_ "STD_CODE" "{$PROJ_DIR$\src\ir_lora.c}.59.5" 1 0 0 0 "" 0 ""
+Bp6=_ "STD_CODE" "{$PROJ_DIR$\src\ir_lora.c}.68.4" 1 0 0 0 "" 0 ""
+Count=7
 [FET]
 Clock mode=14
 Extended Clock mode=-1

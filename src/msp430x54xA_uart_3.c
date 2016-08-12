@@ -73,9 +73,14 @@
 #include <protocol.h>
 #include <uart.h>
 
-static int recv_buf_len3=0;
-static char recv_buf3[256];
+int putchar(int ch)  
+{  
+    UCA3TXBUF = ch;  
+    while(!(UCA3IFG & UCTXIFG));  
+    return ch;  
+}  
 
+//for printf
 void config_uart3_init(void)
 {
   P10SEL = 0x30;                             // P9.4,5 = USCI_A4 TXD/RXD
@@ -85,98 +90,5 @@ void config_uart3_init(void)
   UCA3BR1 = 0;                              // 1MHz 115200
   UCA3MCTL |= UCBRS_1 + UCBRF_0;            // Modulation UCBRSx=1, UCBRFx=0
   UCA3CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
-  UCA3IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
-}
-
-int uart3_write(unsigned char * buf,int len)
-{
-  int i=0;
-  if(buf)
-  {
-    while(len--)
-    {
-      while (!(UCA3IFG&UCTXIFG));             // USCI_A0 TX buffer ready?
-      UCA3TXBUF = buf[i];
-      i++;    
-    }
-  }
-  return i;
-}
-void uart3_clear(void)
-{
-    memset(recv_buf3,0,recv_buf_len3);
-    recv_buf_len3=0;
-}
-
-int uart3_read(unsigned char * buf,int len,int *read_bytes)
-{
-    int read_len=0;   
-    _DINT();
-    if(recv_buf_len3==0)
-    {
-      *read_bytes=0;
-      goto out;
-    }
-    read_len=(recv_buf_len3>=len)?len:recv_buf_len3;
-    memcpy(buf,recv_buf3,read_len);
-    *read_bytes=read_len;
-    uart3_clear();   
-out:
-  _EINT();
-  return 0;
-}
-// Echo back RXed character, confirm TX buffer is ready first
-#pragma vector=USCI_A3_VECTOR
-__interrupt void USCI_A3_ISR(void)
-{
-  led1_off();
-  switch(__even_in_range(UCA3IV,4))
-  {
-  case 0:break;                             // Vector 0 - no interrupt
-  case 2:                                   // Vector 2 - RXIFG
-    recv_buf3[recv_buf_len3++]=UCA3RXBUF;
-    if(recv_buf_len3==256)
-    {
-      recv_buf_len3=0;
-    }
-    break;
-  case 4:break;                             // Vector 4 - TXIFG
-  default: break;
-  }
-}
-static unsigned char buf[256];
-void process_config_uart3(void)
-{
-    int len=0,total_len=0,tmp_len=0;
-    if(recv_buf_len3>0)
-    {
-      while(len<4)
-      {
-        uart3_read(buf,256,&len);
-        delay(400);
-      }
-      //printf("len=%d,buf[0]=%c\r\n",len,buf[0]);
-      if(len)
-      {  
-        tmp_len=len;
-        if((buf[0]=='#')&&(buf[1]=='$'))
-        {
-        //check len
-          total_len=buf[2]+(buf[3]<<8);
-          if(total_len>len)
-          {
-            delay(500);
-            len=0;
-            while(recv_buf_len3<(total_len-tmp_len))
-            {     
-              ;
-            } 
-            uart3_read(buf+tmp_len,256-tmp_len,&len);
-            tmp_len=tmp_len+len;
-          } 
-          led0_flash_data();
-          parse_data_config(buf,total_len);
-        }
-      }
-    }
+  //UCA3IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
 }

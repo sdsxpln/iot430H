@@ -75,11 +75,11 @@ void main(void)
   while(1)
   {  
     process_key();//ok,send search
-    process_pc_uart1();//ok,一个用于获取devinfo，其他透传给节点，根据port来区分。
+    process_pc_uart0();// ok,一个用于获取devinfo，其他透传给节点，根据port来区分。
     delay(200);
     process_lora_uart2();//接收lora的数据，打包自身的序列号，透传给网关
     delay(200);
-    process_config_uart3();//ok,//用于读写序列号和hub地址等配置信息，MCU PORT
+    process_config_uart1();//ok,//用于读写序列号和hub地址等配置信息，MCU PORT
     delay(200); 
     if(send_search_ready==1)
     {

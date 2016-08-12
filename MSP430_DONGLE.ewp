@@ -640,7 +640,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state>MSP430_UART.txt</state>
+          <state>MSP430_UART.d43</state>
         </option>
         <option>
           <name>OutputFormat</name>
@@ -798,7 +798,7 @@
         </option>
         <option>
           <name>DebugInformation</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>RuntimeControl</name>
@@ -834,7 +834,7 @@
         </option>
         <option>
           <name>ExtraOutputFile</name>
-          <state>MSP430_UART.a43</state>
+          <state>MSP430_DONGLE.a43</state>
         </option>
         <option>
           <name>ExtraOutputFormat</name>

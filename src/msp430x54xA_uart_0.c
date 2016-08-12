@@ -73,12 +73,6 @@
 #include <protocol.h>
 #include <uart.h>
 
-int putchar(int ch)  
-{  
-    UCA0TXBUF = ch;  
-    while(!(UCA0IFG & UCTXIFG));  
-    return ch;  
-}  
 
 static int recv_buf_len0=0;
 static char recv_buf0[256];
@@ -92,7 +86,7 @@ void log_uart0_init(void)
   UCA0BR1 = 0;                              // 1MHz 115200
   UCA0MCTL |= UCBRS_1 + UCBRF_0;            // Modulation UCBRSx=1, UCBRFx=0
   UCA0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
-//  UCA0IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
+  UCA0IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
 }
 
 int uart0_write(unsigned char * buf,int len)
@@ -143,22 +137,50 @@ __interrupt void USCI_A0_ISR(void)
     // _DINT();
     recv_buf0[recv_buf_len0++]=UCA0RXBUF;
    // _EINT();
+    if(recv_buf_len0==256)
+    {
+      recv_buf_len0=0;
+    }
     break;
   case 4:break;                             // Vector 4 - TXIFG
   default: break;
   }
 }
 static unsigned char buf[256];
-//负责处理串口配置工具的命令，主要是读写序列号，配置入网地址，红外控制等。
-//#$[totoal_len][dest_addr_len][dest_addr][port][msg_len][msg][crc]@!
-void process_log_uart0(void)
+
+void process_pc_uart0(void)
 {
-    int len=0;
-    uart0_read(buf,256,&len);
-    if(len)
-    {
-        parse_data(buf,len);
-    }
+    int len=0,total_len=0,tmp_len=0;
+     if(recv_buf_len0>0)
+     {
+        while(len<4)
+        {
+          printf("+");
+          uart0_read(buf,256,&len);
+          delay(400);
+        }
+        if(len)
+        {  
+         tmp_len=len;
+         if((buf[0]=='#')&&(buf[1]=='$'))
+         {
+          //check len
+           total_len=buf[2]+(buf[3]<<8);
+           printf("total %d,len %d\r\n",total_len,len);
+           if(total_len>len)
+           {
+              delay(500);
+              len=0;
+              while(recv_buf_len0<(total_len-tmp_len))
+              {     
+                printf("*");
+              } 
+              uart0_read(buf+tmp_len,256-tmp_len,&len);
+              tmp_len=tmp_len+len;
+           }  
+           led0_flash_data();
+           parse_data_pc(buf,total_len);
+         }       
+      } 
+     }
 }
-
-

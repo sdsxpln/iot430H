@@ -221,9 +221,9 @@ int send_msg(unsigned char *msg,int msg_len,char port,unsigned char * sn,int sn_
  
     switch(uart_channel)
     {
-      case UART_CHANNEL_PC_1:uart1_write(msg_buf,buf_len);break;
+      case UART_CHANNEL_PC_1:uart0_write(msg_buf,buf_len);break;
       case UART_CHANNEL_LORA_2:lora_send(node_addr,msg_buf,buf_len); break;
-      case UART_CHANNEL_CONFIG_3:uart3_write(msg_buf,buf_len); break;
+      case UART_CHANNEL_CONFIG_3:uart1_write(msg_buf,buf_len); break;
       default:printf("error\r\n");break;
     }
 	free(msg_buf);
