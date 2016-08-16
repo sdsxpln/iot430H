@@ -66,8 +66,8 @@ void init_lora_device(void)
    printf("test dongle_addr=0x%02x\r\n",(unsigned short)g_dongle_addr);
    # endif  
    lora_gpio_init();
-   lora_mode_config(LORA_MODE_SLEEP);
-   get_lora_param(lora_config);
+  // lora_mode_config(LORA_MODE_SLEEP);
+   //get_lora_param(lora_config);
    lora_mode_config(LORA_MODE_NORMAL);
 }
 

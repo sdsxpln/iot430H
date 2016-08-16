@@ -87,6 +87,7 @@ void log_uart0_init(void)
   UCA0MCTL |= UCBRS_1 + UCBRF_0;            // Modulation UCBRSx=1, UCBRFx=0
   UCA0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
   UCA0IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
+  uart0_clear();
 }
 
 int uart0_write(unsigned char * buf,int len)
@@ -153,6 +154,7 @@ void process_pc_uart0(void)
     int len=0,total_len=0,tmp_len=0;
      if(recv_buf_len0>0)
      {
+     //   printf("* %d *",recv_buf0[0]);
         while(len<4)
         {
           printf("+");

@@ -74,8 +74,8 @@ void main(void)
   flash_led0_slow(4);//show we begin to run
   while(1)
   {  
-    process_key();//ok,send search
     process_pc_uart0();// ok,一个用于获取devinfo，其他透传给节点，根据port来区分。
+    process_key();//ok,send search
     delay(200);
     process_lora_uart2();//接收lora的数据，打包自身的序列号，透传给网关
     delay(200);

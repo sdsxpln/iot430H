@@ -68,8 +68,8 @@ int  parse_data_pc(unsigned char * buf,int len)
 
 int  parse_data_lora(unsigned char * buf,int len)
 {
-   // printf("lora get data:%d\r\n",len);
-    uart1_write(buf,len);
+    printf("lora get data:%d\r\n",len);
+    uart0_write(buf,len);
     uart2_clear();
     return 0;
 }
