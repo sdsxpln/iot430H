@@ -30,6 +30,13 @@ Enabled=0
 Mode=0
 Graph=0
 Symbiont=0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
 [Breakpoints]
 Bp0=_ "STD_CODE" "{$PROJ_DIR$\src\i2c.c}.235.1" 0 0 0 0 "" 0 ""
 Bp1=_ "STD_CODE" "{$PROJ_DIR$\src\i2c.c}.235.1" 0 0 0 0 "" 0 ""
@@ -44,7 +51,7 @@ Clock mode=14
 Extended Clock mode=-1
 Secure Password=
 Extended Clock Control Enable=1
-Advanced Extended Clock Control=1
+Advanced Extended Clock Control=0
 Emulation mode=0
 Free running=0
 Shutting Down=3
@@ -59,13 +66,6 @@ SP=0
 SR=0
 all registers=0
 File name=
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [Aliases]
 Count=0
 SuppressDialog=0

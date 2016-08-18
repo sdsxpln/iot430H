@@ -4,6 +4,9 @@
   <project>
     <path>$WS_DIR$\MSP430_DONGLE.ewp</path>
   </project>
+  <project>
+    <path>$WS_DIR$\..\iot430N\MSP430_NODE.ewp</path>
+  </project>
   <batchBuild/>
 </workspace>
 

@@ -234,10 +234,10 @@ void lora_send(unsigned short node_addr,unsigned char * buf,int len)
       lora_write(tmp_buf,58);
       tmp_buf=tmp_buf+58;
       send_len=send_len-58;
-      delay(20);
+      delay_us(1000);
     }
   }
-   delay_ms(10);
+   delay_ms(50);
  // lora_write(buf,len);
   printf("lora wrtie 0x%02x,0x%02x,0x%02x\r\n",head[0],head[1],head[2]);
 }
